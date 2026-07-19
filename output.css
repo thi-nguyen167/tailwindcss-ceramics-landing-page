@@ -1,4 +1,5 @@
 /*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap");
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -9,9 +10,14 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --spacing: 0.25rem;
+    --text-6xl: 3.75rem;
+    --text-6xl--line-height: 1;
     --font-weight-light: 300;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --font-headline: var(--headline);
+    --color-background: var(--background);
+    --color-on-background: var(--on-background);
   }
 }
 @layer base {
@@ -169,6 +175,19 @@
   .ml-20 {
     margin-left: calc(var(--spacing) * 20);
   }
+  .overflow-x-hidden {
+    overflow-x: hidden;
+  }
+  .bg-background {
+    background-color: var(--color-background);
+  }
+  .font-headline {
+    font-family: var(--font-headline);
+  }
+  .text-6xl {
+    font-size: var(--text-6xl);
+    line-height: var(--tw-leading, var(--text-6xl--line-height));
+  }
   .leading-\[0\.85\] {
     --tw-leading: 0.85;
     line-height: 0.85;
@@ -181,8 +200,34 @@
     --tw-tracking: -0.04em;
     letter-spacing: -0.04em;
   }
+  .text-on-background {
+    color: var(--color-on-background);
+  }
   .italic {
     font-style: italic;
+  }
+}
+:root {
+  --headline: "EB Garamond", serif;
+  --body-font: "Inter", sans-serif;
+  --label-font: "Space Grotesk", sans-serif;
+  --background: #131313;
+  --on-background: #e5e2e1;
+  --primary: #c9c6c5;
+  --on-primary: #313030;
+}
+.light {
+  --background: #e5e2e1;
+  --on-background: #131313;
+  --primary: #313030;
+  --on-primary: #c9c6c5;
+}
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    -webkit-font-smoothing: antialiased;
+    cursor: none;
   }
 }
 @property --tw-leading {

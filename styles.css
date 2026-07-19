@@ -1,4 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap");
 @import "tailwindcss";
 
+:root {
+  --headline: "EB Garamond", serif;
+  --body-font: "Inter", sans-serif;
+  --label-font: "Space Grotesk", sans-serif;
+
+  --background: #131313;
+  --on-background: #e5e2e1;
+  --primary: #c9c6c5;
+  --on-primary: #313030;
+}
+
+.light {
+  --background: #e5e2e1;
+  --on-background: #131313;
+  --primary: #313030;
+  --on-primary: #c9c6c5;
+}
+
 @theme {
+  /* ---- TYPOGRAPHY ---- */
+  --font-headline: var(--headline);
+  --font-body: var(--body-font);
+  --font-label: var(--label-font);
+
+  /* ---- COLORS ---- */
+  --color-background: var(--background);
+  --color-on-background: var(--on-background);
+}
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    -webkit-font-smoothing: antialiased;
+    cursor: none; /* Hides system cursor for the custom cursor */
+  }
 }
