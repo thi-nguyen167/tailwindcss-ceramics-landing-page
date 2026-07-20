@@ -8,7 +8,7 @@
 
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_right_alt"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_right_alt,mail,public"
     />
   </head>
   <body class="bg-background text-on-background overflow-x-hidden">
@@ -324,7 +324,7 @@
         class="flex flex-col justify-center items-start gap-gutter px-lg pb-lg"
       >
         <span
-          class="uppercase font-label text-sm md:text-base block text-on-background/60 mt-lg"
+          class="uppercase font-label text-sm md:text-base block text-on-background/80 mt-lg"
           >The Human Hand</span
         >
         <h2 class="font-headline text-5xl tracking-tight">
@@ -367,6 +367,98 @@
                 >CURATING</span
               >
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA section -->
+    <section
+      class="px-lg pb-section bg-background border-t border-on-background/5"
+    >
+      <div class="max-w-7xl mx-auto px-lg pb-lg">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-start">
+          <!-- Left Contact -->
+          <div
+            class="flex flex-col justify-center items-start gap-gutter lg:mb-lg"
+          >
+            <span
+              class="uppercase font-label text-sm md:text-base block text-on-background/80 mt-lg"
+              >Commissions</span
+            >
+            <h2 class="font-headline text-5xl tracking-tight">
+              Bespoke <br />Inquiry
+            </h2>
+
+            <p>
+              We accept a limited number of private inquiries annually for
+              custom tableware collections and architectural installations,
+              catering to intentional homes and Michelin-starred culinary
+              spaces.
+            </p>
+            <div class="space-y-4 font-label text-xs text-on-background/60">
+              <div class="flex items-center gap-3 cursor-hover">
+                <span class="material-symbols-outlined text-sm">mail</span>
+                <span class="uppercase font-label">Office@ceramics.studio</span>
+              </div>
+              <div class="flex items-center gap-3 cursor-hover">
+                <span class="material-symbols-outlined text-sm">public</span>
+                <span class="font-label">40.7128° N, 74.0060° W</span>
+              </div>
+            </div>
+          </div>
+          <!-- Right Form -->
+          <div>
+            <form action="submit" class="space-y-16 mt-lg">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+                <div class="relative">
+                  <label
+                    class="font-label text-xs lg:text-sm text-on-background/50 block mb-2 uppercase"
+                    >identification</label
+                  >
+                  <input
+                    class="w-full bg-transparent border-0 border-b border-on-background/20 py-4 focus:ring-0 focus:border-none transition-colors font-label text-sm cursor-pointer placeholder:text-on-primary"
+                    placeholder="NAME / STUDIO"
+                    type="text"
+                  />
+                </div>
+                <div class="relative">
+                  <label
+                    class="font-label text-xs lg:text-sm text-on-background/50 block mb-2 uppercase"
+                    >Contact_point</label
+                  >
+                  <input
+                    class="w-full bg-transparent border-0 border-b border-on-background/20 py-4 focus:ring-0 focus:border-none transition-colors font-label text-sm cursor-pointer placeholder:text-on-primary"
+                    placeholder="EMAIL ADDRESS"
+                    type="text"
+                  />
+                </div>
+                <div class="relative col-span-2">
+                  <label
+                    class="font-label text-xs lg:text-sm text-on-background/50 block mb-2 uppercase"
+                    >Project_narrative</label
+                  >
+                  <textarea
+                    class="w-full bg-transparent border-0 border-b border-on-background/20 py-4 focus:ring-0 focus:border-none transition-colors font-label text-sm cursor-pointer resize-none placeholder:text-on-primary"
+                    placeholder="DESCRIBE THE INTENDED SPACE..."
+                    rows="2"
+                  ></textarea>
+                </div>
+              </div>
+              <button
+                class="group flex items-center gap-8 py-8 border-t border-on-background/10 w-full justify-between cursor-hover"
+                type="submit"
+              >
+                <span
+                  class="font-label-caps tracking-[0.4em] group-hover:pl-4 transition-all duration-700"
+                  >SUBMIT TRANSMISSION</span
+                >
+                <span
+                  class="material-symbols-outlined transition-transform group-hover:translate-x-4"
+                  >arrow_right_alt</span
+                >
+              </button>
+            </form>
           </div>
         </div>
       </div>
