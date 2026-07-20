@@ -9,7 +9,7 @@
   <body class="bg-background text-on-background overflow-x-hidden">
     <!-- Navigation -->
     <nav
-      class="sticky top-0 left-0 w-full flex justify-between items-center px-8 py-10"
+      class="sticky top-0 left-0 z-50 w-full flex justify-between items-center px-8 py-10"
     >
       <div class="cursor-hover">
         <a href="#" class="font-headline text-2xl tracking-tight">CERAMICS</a>
@@ -37,10 +37,82 @@
         >
       </div>
     </nav>
-    <div>
-      <!-- <h1 class="font-headline text-6xl leading-0.5 tracking-tighter mb-16">
-        The Matera <br /><span class="italic font-light ml-20">Monolith</span>
-      </h1> -->
-    </div>
+
+    <!-- Hero Section -->
+    <section
+      class="relative min-h-[110vh] flex flex-col justify-end px-8 pb-24 overflow-hidden"
+    >
+      <!-- Hero Background image -->
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1559810087-893a00a35608?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="The Matera Monolith"
+          class="w-full h-full object-cover scale-105 grayscale brightness-50"
+        />
+        <!-- Dark Layer -->
+        <div
+          class="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent"
+        ></div>
+      </div>
+
+      <!-- Content Container -->
+      <div class="relative z-10 w-full max-w-7xl mx-auto">
+        <!-- Text Hero -->
+        <div class="flex items-center gap-4 mb-5 md:mb-10">
+          <span class="uppercase font-label text-sm md:text-base"
+            >Edition_018</span
+          >
+          <div class="h-px w-20 bg-primary/30"></div>
+        </div>
+
+        <!-- Heading title -->
+        <h1 class="font-headline text-6xl md:text-8xl tracking-tighter mb-16">
+          The Matera <br />
+          <span class="italic font-light ml-8 md:ml-28 block md:inline"
+            >Monolith</span
+          >
+        </h1>
+
+        <!-- Hero Info -->
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-12 border-t border-on-background/10 pt-12"
+        >
+          <div class="space-y-2">
+            <p class="font-label text-xs text-on-background/40 uppercase">
+              Material Composition
+            </p>
+            <p class="font-label text-xs">Pitted Travertine / Basalt Base</p>
+          </div>
+
+          <div class="space-y-2">
+            <p class="font-label text-xs text-on-background/40 uppercase">
+              Dimensions
+            </p>
+            <p class="font-label text-xs">480mm x 320mm x 210mm</p>
+          </div>
+
+          <div class="space-y-2">
+            <p class="font-label text-xs text-on-background/40 uppercase">
+              Weight Class
+            </p>
+            <p class="font-label text-xs">18.4 kg (Net)</p>
+          </div>
+          <!-- Scroll -->
+          <div class="flex items-end justify-end">
+            <div class="flex flex-col items-center gap-4">
+              <span
+                class="font-label text-[10px] text-on-background/30 rotate-90 mb-4"
+                >SCROLL</span
+              >
+              <div class="w-px h-12 bg-on-background/20 relative">
+                <div
+                  class="absolute top-0 left-0 w-full h-2 bg-on-background scroll-dot"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
