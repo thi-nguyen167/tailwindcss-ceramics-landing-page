@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CERAMICS | Artisanal Minimalist Home Objects</title>
     <link rel="stylesheet" href="output.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_right_alt"
+    />
   </head>
   <body class="bg-background text-on-background overflow-x-hidden">
     <!-- Navigation -->
@@ -235,7 +240,7 @@
         <!-- Item 02 -->
         <div class="lg:col-span-2 lg:mt-40 group">
           <div
-            class="aspect-square overflow-hidden bg-surface-container-lowest relative cursor-hover"
+            class="aspect-square overflow-hidden bg-surface-container-lowest relative cursor-pointer"
           >
             <img
               class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
@@ -252,6 +257,57 @@
               Sculptural Pour-Over Carafe
             </h4>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog section -->
+    <section class="px-lg pb-section">
+      <div
+        class="max-w-7xl h-px bg-linear-to-r from-on-background/20 to-transparent mb-lg"
+      ></div>
+
+      <!-- post -->
+      <div class="grid grid-cols-3 gap-gutter">
+        <!-- Left: image -->
+        <div class="col-span-1">
+          <div
+            class="aspect-3/4 overflow-hidden bg-surface-container-lowest cursor-pointer relative"
+          >
+            <img
+              class="w-full h-full object-cover grayscale transition-transform duration-2000 hover:scale-115"
+              alt="Ceramic Study"
+              src="https://images.unsplash.com/photo-1646605497032-57f6583fd48a?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+          </div>
+        </div>
+
+        <!-- Right: info/describe -->
+        <div class="col-span-2 flex flex-col justify-center">
+          <p class="font-label text-xs uppercase text-on-background/40 mb-4">
+            Material Study
+          </p>
+
+          <p class="font-body text-sm md:text-base leading-relaxed mb-6">
+            An exploration of the thermal properties of raw, unglazed stoneware
+            and the unpredictable ash patination born from a 72-hour wood-fired
+            kiln. By exposing wild-foraged clay to sustained, extreme
+            temperatures, we invite a process of elemental alchemy. Airborne
+            wood ash dances through the firing chamber, melting upon the
+            vessel's surface to form a spontaneous, glass-like glaze. It is a
+            deliberate surrender of human control, where the brutal forces of
+            fire and time dictate the final tactile landscape, leaving an
+            unrepeatable record of its creation.
+          </p>
+          <a
+            class="font-label text-[8px] md:text-[10px] text-on-background/75 flex items-center gap-2 hover:translate-x-2 transition-transform cursor-pointer"
+            href="#"
+          >
+            READ MONOGRAPH
+            <span class="material-symbols-outlined text-xs"
+              >arrow_right_alt</span
+            >
+          </a>
         </div>
       </div>
     </section>
