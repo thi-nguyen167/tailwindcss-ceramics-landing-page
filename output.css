@@ -23,10 +23,14 @@
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
+    --text-7xl: 4.5rem;
+    --text-7xl--line-height: 1;
     --text-8xl: 6rem;
     --text-8xl--line-height: 1;
     --font-weight-light: 300;
@@ -250,6 +254,12 @@
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
+  .mt-10 {
+    margin-top: calc(var(--spacing) * 10);
+  }
+  .mt-12 {
+    margin-top: calc(var(--spacing) * 12);
+  }
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
   }
@@ -277,8 +287,14 @@
   .mb-16 {
     margin-bottom: calc(var(--spacing) * 16);
   }
+  .mb-32 {
+    margin-bottom: calc(var(--spacing) * 32);
+  }
   .mb-lg {
     margin-bottom: var(--spacing-lg);
+  }
+  .mb-section {
+    margin-bottom: var(--spacing-section);
   }
   .mb-sm {
     margin-bottom: var(--spacing-sm);
@@ -349,6 +365,9 @@
   .max-w-7xl {
     max-width: var(--container-7xl);
   }
+  .max-w-\[240px\] {
+    max-width: 240px;
+  }
   .max-w-md {
     max-width: var(--container-md);
   }
@@ -418,8 +437,17 @@
   .gap-8 {
     gap: calc(var(--spacing) * 8);
   }
+  .gap-12 {
+    gap: calc(var(--spacing) * 12);
+  }
+  .gap-24 {
+    gap: calc(var(--spacing) * 24);
+  }
   .gap-gutter {
     gap: var(--spacing-gutter);
+  }
+  .gap-lg {
+    gap: var(--spacing-lg);
   }
   .gap-sm {
     gap: var(--spacing-sm);
@@ -454,6 +482,9 @@
   }
   .gap-y-32 {
     row-gap: calc(var(--spacing) * 32);
+  }
+  .gap-y-lg {
+    row-gap: var(--spacing-lg);
   }
   .overflow-hidden {
     overflow: hidden;
@@ -617,11 +648,29 @@
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
   }
+  .py-24 {
+    padding-block: calc(var(--spacing) * 24);
+  }
   .py-section {
     padding-block: var(--spacing-section);
   }
+  .py-sm {
+    padding-block: var(--spacing-sm);
+  }
+  .pt-4 {
+    padding-top: calc(var(--spacing) * 4);
+  }
+  .pt-6 {
+    padding-top: calc(var(--spacing) * 6);
+  }
+  .pt-8 {
+    padding-top: calc(var(--spacing) * 8);
+  }
   .pt-12 {
     padding-top: calc(var(--spacing) * 12);
+  }
+  .pt-lg {
+    padding-top: var(--spacing-lg);
   }
   .pb-1 {
     padding-bottom: var(--spacing);
@@ -634,6 +683,9 @@
   }
   .pb-section {
     padding-bottom: var(--spacing-section);
+  }
+  .pb-sm {
+    padding-bottom: var(--spacing-sm);
   }
   .font-body {
     font-family: var(--font-body);
@@ -648,6 +700,10 @@
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
   }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
   .text-5xl {
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
@@ -655,6 +711,10 @@
   .text-6xl {
     font-size: var(--text-6xl);
     line-height: var(--tw-leading, var(--text-6xl--line-height));
+  }
+  .text-7xl {
+    font-size: var(--text-7xl);
+    line-height: var(--tw-leading, var(--text-7xl--line-height));
   }
   .text-base {
     font-size: var(--text-base);
@@ -676,6 +736,9 @@
   }
   .text-\[10px\] {
     font-size: 10px;
+  }
+  .text-\[11px\] {
+    font-size: 11px;
   }
   .leading-loose {
     --tw-leading: var(--leading-loose);
@@ -771,8 +834,17 @@
   .opacity-0 {
     opacity: 0%;
   }
+  .opacity-20 {
+    opacity: 20%;
+  }
+  .opacity-30 {
+    opacity: 30%;
+  }
   .opacity-40 {
     opacity: 40%;
+  }
+  .opacity-60 {
+    opacity: 60%;
   }
   .outline {
     outline-style: var(--tw-outline-style);
@@ -897,6 +969,9 @@
     .hover\:opacity-50:hover {
       opacity: 50%;
     }
+    .hover\:opacity-100:hover {
+      opacity: 100%;
+    }
   }
   .focus\:border-none:focus {
     --tw-border-style: none;
@@ -921,6 +996,9 @@
     }
     .md\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .md\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .md\:grid-cols-4 {
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -972,6 +1050,9 @@
     }
     .lg\:grid-cols-5 {
       grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+    .lg\:flex-row {
+      flex-direction: row;
     }
     .lg\:text-base {
       font-size: var(--text-base);
