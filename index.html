@@ -40,12 +40,12 @@
 
     <!-- Hero Section -->
     <section
-      class="relative min-h-[110vh] flex flex-col justify-end px-8 pb-section overflow-hidden"
+      class="relative min-h-screen flex flex-col justify-end px-8 pb-section overflow-hidden"
     >
       <!-- Hero Background image -->
       <div class="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1559810087-893a00a35608?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="./background.jpg"
           alt="The Matera Monolith"
           class="w-full h-full object-cover scale-105 grayscale brightness-50"
         />
@@ -132,22 +132,126 @@
         </div>
 
         <!-- Right -->
-
         <div class="lg:col-span-2">
           <p
             class="font-body text-on-background/75 text-base md:text-xl leading-relaxed italic mb-sm"
           >
-            "We believe that the home is a sanctuary of intentionality. By
-            stripping an object to its purest material essence, we invite a
-            moment of silence into the everyday."
+            "We believe the home is a sanctuary of intentionality. By returning
+            clay to its purest essence, we invite a moment of silence into your
+            daily rituals."
           </p>
           <p
             class="font-lable text-sm lg:text-base text-on-background/60 leading-loose max-w-md"
           >
-            Each piece is carved from unique geological specimens, ensuring that
-            no two objects ever share the same narrative. Our studio operates at
-            the intersection of geological history and modernist restraint.
+            Our studio operates at the intersection of ancestral pottery
+            techniques and modernist restraint. Every artisanal ceramic piece is
+            a unique dialogue between earth, fire, and the human hand,
+            reflecting the unrepeatable narrative of the wood-fired kiln.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collection section -->
+    <section class="px-lg pb-section">
+      <div class="max-w-7xl mx-auto flex justify-between items-end mb-lg">
+        <div>
+          <span
+            class="uppercase font-lable text-on-background/60 text-sm block mb-2 tracking-wider"
+            >Collection</span
+          >
+          <h3 class="font-headline text-2xl md:text-5xl">Current Series</h3>
+        </div>
+
+        <a
+          class="font-label text-xs tracking-widest font-bold hover:opacity-50 uppercase cursor-pointer border-b border-on-background pb-1 transition-opacity"
+          href="#"
+          >Explore Catalog</a
+        >
+      </div>
+
+      <!-- Grid Collection -->
+      <div
+        class="grid grid-cols-1 lg:grid-cols-5 gap-y-32 gap-x-gutter max-w-7xl mx-auto items-start"
+      >
+        <!-- Item 01 -->
+        <div class="lg:col-span-3 group relative">
+          <div
+            class="aspect-4/5 overflow-hidden bg-background/20 relative cursor-hover"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1619400131077-bbdefafeae75?q=80&w=776&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Ceramic Black Vase"
+              class="grayscale-75 w-full h-full object-cover transition-transform duration-2000 group-hover:scale-105"
+            />
+
+            <!-- Tech Specs Hover -->
+            <div
+              class="absolute inset-0 bg-background/40 backdrop-blur-sm flex flex-col justify-center p-16 font-lable pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-(--ease-in-out-expo)"
+            >
+              <div class="space-y-6">
+                <div
+                  class="flex justify-between border-b border-on-background/10 pb-4"
+                >
+                  <span class="opacity-40">MATERIAL</span>
+                  <span>Black Stoneware</span>
+                </div>
+                <div
+                  class="flex justify-between border-b border-on-background/10 pb-4"
+                >
+                  <span class="opacity-40">WEIGHT</span>
+                  <span>1.8 kg</span>
+                </div>
+                <div
+                  class="flex justify-between border-b border-on-background/10 pb-4"
+                >
+                  <span class="opacity-40">MOHS HARDNESS</span>
+                  <span>6.0 - 6.5</span>
+                </div>
+                <div
+                  class="flex justify-between border-b border-on-background/10 pb-4"
+                >
+                  <span class="opacity-40">ORIGIN</span>
+                  <span>Kyoto, Japan</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 flex justify-between items-start">
+            <div>
+              <span class="font-label text-xs text-on-background/40"
+                >SERIES 001_A</span
+              >
+              <h4 class="font-headline text-2xl mt-1">Ceramic Black Vase</h4>
+            </div>
+            <span
+              class="font-label text-xs px-4 py-2 font-bold tracking-widest bg-on-background text-background rounded-full"
+              >Available</span
+            >
+          </div>
+        </div>
+
+        <!-- Item 02 -->
+        <div class="lg:col-span-2 lg:mt-40 group">
+          <div
+            class="aspect-square overflow-hidden bg-surface-container-lowest relative cursor-hover"
+          >
+            <img
+              class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+              data-alt="Basalt Pillar"
+              src="https://images.unsplash.com/photo-1617076678534-e8e83ee4d6c2?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+          </div>
+
+          <div class="mt-8">
+            <span class="font-label text-xs text-on-background/40"
+              >SERIES 002_C</span
+            >
+            <h4 class="font-headline text-2xl mt-1">
+              Sculptural Pour-Over Carafe
+            </h4>
+          </div>
         </div>
       </div>
     </section>
