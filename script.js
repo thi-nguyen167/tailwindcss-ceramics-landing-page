@@ -15,6 +15,22 @@ hamburgerBtn.addEventListener("click", () => {
 window.addEventListener("scroll", () => {
   const scrolled = window.pageYOffset;
 
+  // Hero Image Parallax
+  const heroImg = document.getElementById("hero-img");
+  if (heroImg) {
+    heroImg.style.transform = `translateY(${scrolled * 0.5}px) scale(1.05)`;
+  }
+
+  // Process Parallax
+  const processImg = document.getElementById("process-parallax");
+  if (processImg) {
+    const rect = processImg.parentElement.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      const relativePos = (window.innerHeight - rect.top) / window.innerHeight;
+      processImg.style.transform = `translateY(${(relativePos - 0.5) * 80}px) scale(1.2)`;
+    }
+  }
+
   // Navbar blur on scroll
   const nav = document.querySelector("nav");
   if (scrolled > 50) {
