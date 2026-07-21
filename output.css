@@ -272,6 +272,9 @@
   .mt-lg {
     margin-top: var(--spacing-lg);
   }
+  .mb-0 {
+    margin-bottom: 0px;
+  }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
   }
@@ -338,8 +341,17 @@
   .h-48 {
     height: calc(var(--spacing) * 48);
   }
+  .h-\[60\%\] {
+    height: 60%;
+  }
   .h-\[60vh\] {
     height: 60vh;
+  }
+  .h-\[70\%\] {
+    height: 70%;
+  }
+  .h-\[80\%\] {
+    height: 80%;
   }
   .h-full {
     height: 100%;
@@ -352,6 +364,12 @@
   }
   .w-20 {
     width: calc(var(--spacing) * 20);
+  }
+  .w-\[60\%\] {
+    width: 60%;
+  }
+  .w-\[70\%\] {
+    width: 70%;
   }
   .w-\[80\%\] {
     width: 80%;
@@ -422,6 +440,9 @@
   .justify-end {
     justify-content: flex-end;
   }
+  .gap-0 {
+    gap: 0px;
+  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
@@ -436,6 +457,9 @@
   }
   .gap-gutter {
     gap: var(--spacing-gutter);
+  }
+  .gap-sm {
+    gap: var(--spacing-sm);
   }
   :where(.space-y-2 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
@@ -618,8 +642,14 @@
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
   }
+  .px-12 {
+    padding-inline: calc(var(--spacing) * 12);
+  }
   .px-lg {
     padding-inline: var(--spacing-lg);
+  }
+  .px-sm {
+    padding-inline: var(--spacing-sm);
   }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
@@ -994,6 +1024,9 @@
     .md\:grid-cols-4 {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
+    .md\:px-lg {
+      padding-inline: var(--spacing-lg);
+    }
     .md\:text-5xl {
       font-size: var(--text-5xl);
       line-height: var(--tw-leading, var(--text-5xl--line-height));
@@ -1030,8 +1063,26 @@
     .lg\:mb-lg {
       margin-bottom: var(--spacing-lg);
     }
+    .lg\:aspect-3\/4 {
+      aspect-ratio: 3/4;
+    }
+    .lg\:h-48 {
+      height: calc(var(--spacing) * 48);
+    }
+    .lg\:h-\[80\%\] {
+      height: 80%;
+    }
     .lg\:h-auto {
       height: auto;
+    }
+    .lg\:w-48 {
+      width: calc(var(--spacing) * 48);
+    }
+    .lg\:w-\[80\%\] {
+      width: 80%;
+    }
+    .lg\:w-full {
+      width: 100%;
     }
     .lg\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1044,6 +1095,9 @@
     }
     .lg\:flex-row {
       flex-direction: row;
+    }
+    .lg\:gap-gutter {
+      gap: var(--spacing-gutter);
     }
     .lg\:text-base {
       font-size: var(--text-base);

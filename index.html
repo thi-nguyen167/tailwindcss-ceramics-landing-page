@@ -172,7 +172,7 @@
     </section>
 
     <!-- Collection section -->
-    <section class="px-lg pb-section">
+    <section class="px-sm md:px-lg pb-section">
       <div class="max-w-7xl mx-auto flex justify-between items-end mb-lg">
         <div>
           <span
@@ -276,20 +276,20 @@
     </section>
 
     <!-- Blog section -->
-    <section class="px-lg pb-section">
+    <section class="px-sm md:px-lg pb-section">
       <div
-        class="max-w-7xl h-px bg-linear-to-r from-on-background/20 to-transparent mb-lg"
+        class="max-w-7xl h-px bg-linear-to-r from-on-background/20 to-transparent mb-0 lg:mb-lg"
       ></div>
 
       <!-- post -->
-      <div class="grid grid-cols-3 gap-gutter">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-gutter">
         <!-- Left: image -->
-        <div class="col-span-1">
+        <div class="lg:col-span-1">
           <div
-            class="aspect-3/4 overflow-hidden bg-surface-container-lowest cursor-pointer flex items-center justify-center"
+            class="aspect-square lg:aspect-3/4 overflow-hidden bg-surface-container-lowest cursor-pointer flex items-center justify-center"
           >
             <img
-              class="w-[80%] h-48 object-cover grayscale-75 transition-transform duration-2000 hover:scale-115"
+              class="lg:w-full lg:h-48 w-[70%] h-[70%] object-cover grayscale-75 transition-transform duration-2000 hover:scale-115"
               alt="Ceramic Study"
               src="https://images.unsplash.com/photo-1633630387019-63cb04aaffab?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             />
@@ -297,7 +297,7 @@
         </div>
 
         <!-- Right: info/describe -->
-        <div class="col-span-2 flex flex-col justify-center">
+        <div class="lg:col-span-2 flex flex-col justify-center">
           <p class="font-label text-xs uppercase text-on-background/40 mb-4">
             Material Study
           </p>
@@ -335,7 +335,7 @@
 
       <!-- Right text -->
       <div
-        class="flex flex-col justify-center items-start gap-gutter px-lg pb-lg"
+        class="flex flex-col justify-center items-start gap-gutter px-sm md:px-lg pb-lg"
       >
         <span
           class="uppercase font-label text-sm md:text-base block text-on-background/80 mt-lg"
@@ -388,9 +388,9 @@
 
     <!-- CTA section -->
     <section
-      class="px-lg pb-section bg-background border-t border-on-background/5"
+      class="px-sm md:px-lg pb-section bg-background border-t border-on-background/5"
     >
-      <div class="max-w-7xl mx-auto px-lg pb-lg">
+      <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-start">
           <!-- Left Contact -->
           <div
@@ -479,10 +479,10 @@
     </section>
 
     <!-- footer -->
-    <footer class="px-lg pt-lg pb-sm bg-black border-t border-on-background/5">
+    <footer class="px-12 md:px-lg pt-lg pb-sm bg-black border-t border-on-background/5">
       <div class="max-w-7xl mx-auto">
         <div
-          class="flex flex-col lg:flex-row justify-between items-start gap-gutter mb-lg"
+          class="flex flex-col lg:flex-row justify-between items-start gap-sm lg:gap-gutter mb-lg"
         >
           <div class="">
             <div
@@ -497,7 +497,7 @@
               the intentional collector.
             </p>
           </div>
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-gutter">
+          <div class="grid grid-cols-3 gap-gutter">
             <div class="space-y-6">
               <span
                 class="font-label-caps text-xs text-on-background/50 uppercase block"
