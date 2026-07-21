@@ -1,85 +1,154 @@
-const hamburgerBtn = document.getElementById("hamburger-menu");
-const mobileMenu = document.getElementById("mobile-menu-overlay");
-const iconSpan = hamburgerBtn.querySelector("span");
+document.addEventListener("DOMContentLoaded", () => {
+  // ==========================================
+  // MOBILE MENU LOGIC
+  // ==========================================
+  const initMobileMenu = () => {
+    const hamburgerBtn = document.getElementById("hamburger-menu");
+    const mobileMenu = document.getElementById("mobile-menu-overlay");
+    if (!hamburgerBtn || !mobileMenu) return;
 
-hamburgerBtn.addEventListener("click", () => {
-  mobileMenu.classList.toggle("opacity-0");
-  mobileMenu.classList.toggle("pointer-events-none");
+    const iconSpan = hamburgerBtn.querySelector("span");
+    const mobileLinks = mobileMenu.querySelectorAll("a");
 
-  const isMenuHidden = mobileMenu.classList.contains("opacity-0");
+    const toggleMenu = (forceClose = false) => {
+      const isCurrentlyHidden = mobileMenu.classList.contains("opacity-0");
+      const shouldHide = forceClose ? true : !isCurrentlyHidden;
 
-  iconSpan.textContent = isMenuHidden ? "menu" : "close";
-  document.body.style.overflow = isMenuHidden ? "" : "hidden";
-});
+      if (shouldHide) {
+        // Close the menu
+        mobileMenu.classList.add("opacity-0", "pointer-events-none");
+        iconSpan.textContent = "menu";
+        document.body.style.overflow = ""; // Re-enable page scrolling
+      } else {
+        // Open the menu
+        mobileMenu.classList.remove("opacity-0", "pointer-events-none");
+        iconSpan.textContent = "close";
+        document.body.style.overflow = "hidden"; // Disable page scrolling
+      }
+    };
 
-window.addEventListener("scroll", () => {
-  const scrolled = window.pageYOffset;
+    // Attach click event to the hamburger button
+    hamburgerBtn.addEventListener("click", () => toggleMenu());
 
-  // Hero Image Parallax
-  const heroImg = document.getElementById("hero-img");
-  if (heroImg) {
-    heroImg.style.transform = `translateY(${scrolled * 0.5}px) scale(1.05)`;
-  }
-
-  // Process Parallax
-  const processImg = document.getElementById("process-parallax");
-  if (processImg) {
-    const rect = processImg.parentElement.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      const relativePos = (window.innerHeight - rect.top) / window.innerHeight;
-      processImg.style.transform = `translateY(${(relativePos - 0.5) * 80}px) scale(1.2)`;
-    }
-  }
-
-  // Navbar blur on scroll
-  const nav = document.querySelector("nav");
-  if (scrolled > 50) {
-    nav.classList.add(
-      "bg-background/80",
-      "backdrop-blur-xl",
-      "border-b",
-      "border-on-background/5",
+    // Attach click event to all links inside the mobile menu to force close it when clicked
+    mobileLinks.forEach((link) =>
+      link.addEventListener("click", () => toggleMenu(true)),
     );
-    nav.style.paddingTop = "20px";
-    nav.style.paddingBottom = "20px";
-  } else {
-    nav.classList.remove(
-      "bg-background/80",
-      "backdrop-blur-xl",
-      "border-b",
-      "border-on-background/5",
+  };
+
+  // ==========================================
+  // SCROLL & PARALLAX EFFECTS
+  // ==========================================
+  const initScrollEffects = () => {
+    const nav = document.querySelector("nav");
+    const heroImg = document.getElementById("hero-img");
+    const processImg = document.getElementById("process-parallax");
+
+    let ticking = false; // Variable to control requestAnimationFrame
+
+    const onScroll = () => {
+      const scrolled = window.scrollY; // Use window.scrollY as the modern standard
+
+      // Hero Image Parallax (moves the image slightly slower than the scroll)
+      if (heroImg) {
+        heroImg.style.transform = `translateY(${scrolled * 0.5}px) scale(1.05)`;
+      }
+
+      // Process Section Parallax (calculates relative position in the viewport)
+      if (processImg) {
+        const rect = processImg.parentElement.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          const relativePos =
+            (window.innerHeight - rect.top) / window.innerHeight;
+          processImg.style.transform = `translateY(${(relativePos - 0.5) * 80}px) scale(1.2)`;
+        }
+      }
+
+      // Navbar Blur
+      if (nav) {
+        if (scrolled > 50) {
+          nav.classList.add(
+            "bg-background/80",
+            "backdrop-blur-xl",
+            "py-5",
+            "border-on-background/10",
+          );
+        } else {
+          nav.classList.remove(
+            "bg-background/80",
+            "backdrop-blur-xl",
+            "py-5",
+            "border-on-background/10",
+          );
+        }
+      }
+
+      ticking = false;
+    };
+
+    // Optimize the scroll event listener using requestAnimationFrame to prevent layout thrashing
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    });
+  };
+
+  // ==========================================
+  // REVEAL ANIMATION (Intersection Observer)
+  // ==========================================
+  const initRevealAnimations = () => {
+    const elementsToReveal = document.querySelectorAll(".reveal");
+    if (elementsToReveal.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            // Stop observing the element once it has been revealed to save CPU resources
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      // Trigger the animation when 10% of the element is visible, with a -100px bottom margin offset
+      { threshold: 0.1, rootMargin: "0px 0px -100px 0px" },
     );
-    nav.style.paddingTop = "40px";
-    nav.style.paddingBottom = "40px";
-  }
-});
 
-// Reveal Animation with Letter Spacing
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -100px 0px",
-};
+    elementsToReveal.forEach((el) => observer.observe(el));
+  };
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
-}, observerOptions);
+  // ==========================================
+  // CUSTOM CURSOR
+  // ==========================================
+  const initCustomCursor = () => {
+    const cursor = document.getElementById("custom-cursor");
+    if (!cursor) return;
 
-document.querySelectorAll(".reveal").forEach((el) => {
-  observer.observe(el);
-});
+    // Update cursor position based on mouse movement
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+    });
 
-// Custom Cursor
-const cursor = document.getElementById("custom-cursor");
-document.addEventListener("mousemove", (e) => {
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
-});
+    // Group both 'cursor-pointer' and 'cursor-hover' classes into a single NodeList
+    const interactables = document.querySelectorAll(
+      ".cursor-pointer, .cursor-hover",
+    );
 
-document.querySelectorAll(".cursor-pointer").forEach((item) => {
-  item.addEventListener("mouseenter", () => cursor.classList.add("active"));
-  item.addEventListener("mouseleave", () => cursor.classList.remove("active"));
+    // Add active class (scaling effect) when hovering over interactable elements
+    interactables.forEach((item) => {
+      item.addEventListener("mouseenter", () => cursor.classList.add("active"));
+      item.addEventListener("mouseleave", () =>
+        cursor.classList.remove("active"),
+      );
+    });
+  };
+
+  // Initialize
+  initMobileMenu();
+  initScrollEffects();
+  initRevealAnimations();
+  initCustomCursor();
 });
