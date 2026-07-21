@@ -25,22 +25,22 @@
       <!-- Desktop menu -->
       <div class="hidden md:flex items-center gap-gutter">
         <a
-          href="#"
+          href="#collection"
           class="font-label text-xs tracking-widest font-bold hover:text-on-background/50 uppercase cursor-pointer"
           >Collection</a
         >
         <a
-          href="#"
+          href="#ethos"
           class="font-label text-xs tracking-widest font-bold hover:text-on-background/50 uppercase cursor-pointer"
           >The ethos</a
         >
         <a
-          href="#"
+          href="#archive"
           class="font-label text-xs tracking-widest font-bold hover:text-on-background/50 uppercase cursor-pointer"
           >Archive</a
         >
         <a
-          href="#"
+          href="#inquiry"
           class="font-label text-xs px-6 py-2.5 font-bold tracking-widest bg-on-background text-background rounded-full hover:scale-105 transition-transform cursor-pointer uppercase"
           >Inquiry</a
         >
@@ -53,10 +53,10 @@
 
     <!-- Mobile menu -->
     <div id="mobile-menu-overlay" class="fixed inset-0 bg-background z-40 flex flex-col justify-center items-center gap-8 transition-opacity duration-300 opacity-0 pointer-events-none">
-      <a href="#" class="font-headline text-3xl hover:text-on-background/50 transition-colors">Collection</a>
-      <a href="#" class="font-headline text-3xl hover:text-on-background/50 transition-colors">The ethos</a>
-      <a href="#" class="font-headline text-3xl hover:text-on-background/50 transition-colors">Archive</a>
-      <a href="#" class="font-label text-sm px-8 py-3 mt-4 bg-on-background text-background rounded-full uppercase tracking-widest">Inquiry</a>
+      <a href="#collection" class="font-headline text-3xl hover:text-on-background/50 transition-colors">Collection</a>
+      <a href="#ethos" class="font-headline text-3xl hover:text-on-background/50 transition-colors">The ethos</a>
+      <a href="#archive" class="font-headline text-3xl hover:text-on-background/50 transition-colors">Archive</a>
+      <a href="#inquiry" class="font-label text-sm px-8 py-3 mt-4 bg-on-background text-background rounded-full uppercase tracking-widest">Inquiry</a>
     </div>
 
     <!-- Hero Section -->
@@ -138,7 +138,7 @@
     </section>
 
     <!-- Introduction Section -->
-    <section class="px-lg py-section">
+    <section id="archive" class="px-lg py-section">
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-gutter reveal">
         <!-- left -->
         <div class="lg:col-span-1">
@@ -175,7 +175,7 @@
     </section>
 
     <!-- Collection section -->
-    <section class="px-sm md:px-lg pb-section">
+    <section id="collection" class="px-sm md:px-lg pb-section">
       <div class="max-w-7xl mx-auto flex justify-between items-end mb-lg">
         <div class="reveal">
           <span
@@ -279,7 +279,7 @@
     </section>
 
     <!-- Blog section -->
-    <section class="px-sm md:px-lg pb-section reveal">
+    <section id="ethos" class="px-sm md:px-lg pb-section reveal">
       <div
         class="max-w-7xl h-px bg-linear-to-r from-on-background/20 to-transparent mb-lg"
       ></div>
@@ -390,7 +390,7 @@
     </section>
 
     <!-- CTA section -->
-    <section
+    <section id="inquiry"
       class="px-sm md:px-lg pb-section bg-background border-t border-on-background/5"
     >
       <div class="max-w-7xl mx-auto">
