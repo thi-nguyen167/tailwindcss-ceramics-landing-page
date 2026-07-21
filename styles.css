@@ -67,3 +67,17 @@
 .scroll-dot {
   animation: scroll-indicator 2s infinite;
 }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 2s var(--ease-out-expo),
+    transform 2s var(--ease-out-expo),
+    letter-spacing 2s var(--ease-in-out-expo);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
