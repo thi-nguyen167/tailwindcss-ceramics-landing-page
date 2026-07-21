@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="output.css" />
 
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_right_alt,close,mail,menu,public"
-    />
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_right_alt,close,dark_mode,light_mode,mail,menu,public"
+/>
   </head>
   <body class="bg-background text-on-background overflow-x-hidden">
     <!-- Custom cursor -->
     <div id="custom-cursor"></div>
     <!-- Navigation -->
     <nav
-      class="fixed top-0 left-0 z-50 w-full flex justify-between items-center px-sm md:px-lg py-10 transition-all duration-700 ease-in-out"
+      class="fixed top-0 left-0 z-50 w-full flex justify-between items-center px-sm md:px-lg py-10 transition-all duration-700 ease-in-out bg-linear-to-b from-background to-background/5 border-transparent"
     >
       <div class="cursor-hover">
         <a href="#" class="font-headline text-2xl tracking-tight">CERAMICS</a>
@@ -46,9 +46,21 @@
         >
       </div>
 
-      <button class="md:hidden z-50 relative" id="hamburger-menu">
-        <span class="material-symbols-outlined text-2xl">menu</span>
-      </button>
+      <div class="hidden md:flex items-center gap-gutter">
+        </div>
+
+      <div class="flex items-center gap-2 md:gap-4 z-50 relative">
+        <button 
+          id="theme-toggle" 
+          class="cursor-pointer hover:opacity-50 transition-opacity flex items-center justify-center p-2"
+        >
+          <span id="theme-icon" class="material-symbols-outlined text-2xl">light_mode</span>
+        </button>
+
+        <button class="md:hidden cursor-pointer flex items-center justify-center p-2" id="hamburger-menu">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
     </nav>
 
     <!-- Mobile menu -->
@@ -72,8 +84,9 @@
           class="w-full h-full object-cover scale-105 grayscale brightness-50"
         />
         <!-- Dark Layer -->
-        <div
-          class="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent"
+        <div 
+          class="absolute inset-0 transition-colors duration-700" 
+          style="background-color: var(--hero-overlay);"
         ></div>
       </div>
 
@@ -84,7 +97,7 @@
           <span class="uppercase font-label text-sm md:text-base"
             >Edition_018</span
           >
-          <div class="h-px w-20 bg-primary/30"></div>
+          <div class="h-px w-20 bg-on-background/50"></div>
         </div>
 
         <!-- Heading title -->

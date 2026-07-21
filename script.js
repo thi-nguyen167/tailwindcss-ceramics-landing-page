@@ -146,9 +146,45 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
+  // ==========================================
+  // THEME TOGGLE (LIGHT/DARK MODE)
+  // ==========================================
+  const initThemeToggle = () => {
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
+
+    // Exit if the button or icon is missing from the DOM
+    if (!themeToggleBtn || !themeIcon) return;
+
+    // Retrieve the user's saved theme preference from the browser's LocalStorage
+    const currentTheme = localStorage.getItem("theme");
+
+    // If the user previously selected the light theme, apply it immediately on load
+    if (currentTheme === "light") {
+      document.documentElement.classList.add("light");
+      themeIcon.textContent = "dark_mode"; // Change icon to moon
+    }
+
+    // Handle the click event to toggle between themes
+    themeToggleBtn.addEventListener("click", () => {
+      // Toggle the '.light' class on the root <html> element
+      document.documentElement.classList.toggle("light");
+
+      // Update LocalStorage and the toggle icon based on the new active state
+      if (document.documentElement.classList.contains("light")) {
+        localStorage.setItem("theme", "light");
+        themeIcon.textContent = "dark_mode";
+      } else {
+        localStorage.setItem("theme", "dark");
+        themeIcon.textContent = "light_mode";
+      }
+    });
+  };
+
   // Initialize
   initMobileMenu();
   initScrollEffects();
   initRevealAnimations();
   initCustomCursor();
+  initThemeToggle();
 });

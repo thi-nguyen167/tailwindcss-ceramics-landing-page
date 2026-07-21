@@ -13,6 +13,9 @@
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+
+  --hero-brightness: 0.5;
+  --hero-overlay: transparent;
 }
 
 .light {
@@ -20,6 +23,9 @@
   --on-background: #131313;
   --primary: #9593a1;
   --on-primary: #2b2742;
+
+  --hero-brightness: 0.85;
+  --hero-overlay: rgba(229, 226, 225, 0.4);
 }
 
 @theme {
@@ -47,6 +53,9 @@
     color: var(--color-on-background);
     -webkit-font-smoothing: antialiased;
     cursor: none; /* Hides system cursor for the custom cursor */
+    transition:
+      background-color 0.5s var(--ease-out-expo),
+      color 0.5s var(--ease-out-expo);
   }
 }
 
