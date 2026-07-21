@@ -9,6 +9,20 @@
 
 A premium, highly interactive landing page designed for a minimalist ceramics and home objects studio. It was built with a focus on editorial design, smooth typography, and advanced front-end interactions to mimic high-end architectural and design portfolios.
 
+## Interface Preview
+
+<details>
+  <summary><b>Click to view full Desktop Version</b></summary>
+  <br/>
+  <img alt="Desktop Preview" src="https://github.com/user-attachments/assets/38d7906e-adc2-473c-a46d-fbefbd16ff53" />
+</details>
+
+<details>
+  <summary><b>Click to view full Mobile Version</b></summary>
+  <br/>
+  <img alt="Mobile Preview" src="https://github.com/user-attachments/assets/b7cd2116-d3a8-41fb-a832-2822e3c1c33c" />
+</details>
+
 
 ## Description
 This project is a sophisticated, interactive landing page tailored for artisanal and minimalist home objects. It focuses on editorial design, smooth typography (using EB Garamond, Inter, and Space Grotesk), and advanced front-end interactions. Key features include a custom dynamic cursor, scroll-triggered reveal animations via Intersection Observer, parallax image effects, and a highly responsive smart navbar that blurs the background and reacts to scroll stops. It relies purely on Vanilla JavaScript and Tailwind CSS, keeping the codebase lightweight and performant without heavy external animation libraries.
