@@ -71,3 +71,15 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll(".reveal").forEach((el) => {
   observer.observe(el);
 });
+
+// Custom Cursor
+const cursor = document.getElementById("custom-cursor");
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
+
+document.querySelectorAll(".cursor-pointer").forEach((item) => {
+  item.addEventListener("mouseenter", () => cursor.classList.add("active"));
+  item.addEventListener("mouseleave", () => cursor.classList.remove("active"));
+});

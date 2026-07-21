@@ -1079,6 +1079,22 @@
   opacity: 1;
   transform: translateY(0);
 }
+#custom-cursor {
+  width: 10px;
+  height: 10px;
+  background: var(--color-on-background);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.4s var(--ease-out-expo), width 0.4s var(--ease-out-expo), height 0.4s var(--ease-out-expo);
+  mix-blend-mode: difference;
+}
+#custom-cursor.active {
+  transform: scale(6);
+  background: rgba(229, 226, 225, 0.1);
+  border: 0.25px solid var(--color-on-background);
+}
 @property --tw-scale-x {
   syntax: "*";
   inherits: false;
