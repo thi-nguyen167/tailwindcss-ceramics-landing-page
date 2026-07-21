@@ -299,6 +299,9 @@
   .mb-lg {
     margin-bottom: var(--spacing-lg);
   }
+  .mb-section {
+    margin-bottom: var(--spacing-section);
+  }
   .mb-sm {
     margin-bottom: var(--spacing-sm);
   }
@@ -439,6 +442,9 @@
   }
   .justify-end {
     justify-content: flex-end;
+  }
+  .justify-start {
+    justify-content: flex-start;
   }
   .gap-0 {
     gap: 0px;
@@ -1068,6 +1074,9 @@
     }
     .lg\:h-48 {
       height: calc(var(--spacing) * 48);
+    }
+    .lg\:h-72 {
+      height: calc(var(--spacing) * 72);
     }
     .lg\:h-\[80\%\] {
       height: 80%;
